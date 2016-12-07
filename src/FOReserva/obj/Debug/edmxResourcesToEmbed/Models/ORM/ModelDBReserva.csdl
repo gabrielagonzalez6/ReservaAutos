@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DBReservaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="DBReserva" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="M20_ActualizarEstadoReservaHabitacion" ReturnType="Collection(DBReservaModel.M20_ActualizarEstadoReservaHabitacion_Result)">
+      <Parameter Name="id_reserva" Mode="In" Type="Int32" />
+      <Parameter Name="estado" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="M20_DetalleReservaHabitacion" ReturnType="Collection(DBReservaModel.M20_DetalleReservaHabitacion_Result)">
+      <Parameter Name="id_reserva" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="M20_GuardarReservaHabitacion" ReturnType="Collection(DBReservaModel.M20_GuardarReservaHabitacion_Result)">
+      <Parameter Name="id_reserva" Mode="In" Type="Int32" />
+      <Parameter Name="habitacion" Mode="In" Type="Int32" />
+      <Parameter Name="cantidad_dias" Mode="In" Type="Int32" />
+      <Parameter Name="fecha_reservada" Mode="In" Type="DateTime" />
+      <Parameter Name="hot_id" Mode="In" Type="Int32" />
+      <Parameter Name="usu_id" Mode="In" Type="Int32" />
+      <Parameter Name="estado" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="M20_HotelHistorialReservaHabitacion" ReturnType="Collection(DBReservaModel.M20_HotelHistorialReservaHabitacion_Result)">
+      <Parameter Name="id_hotel" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="M20_UsuarioHistorialReservaHabitacion" ReturnType="Collection(DBReservaModel.M20_UsuarioHistorialReservaHabitacion_Result)">
+      <Parameter Name="id_usuario" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="M20_ActualizarEstadoReservaHabitacion_Result">
+    <Property Type="Int32" Name="Estatus" Nullable="true" />
+    <Property Type="String" Name="Mensaje" Nullable="true" />
+    <Property Type="Int32" Name="Referencia" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="M20_DetalleReservaHabitacion_Result">
+    <Property Type="Int32" Name="hot_id" Nullable="false" />
+    <Property Type="String" Name="hot_nombre" Nullable="false" MaxLength="60" />
+    <Property Type="Int32" Name="usu_id" Nullable="false" />
+    <Property Type="String" Name="fullname" Nullable="false" MaxLength="102" />
+    <Property Type="Int32" Name="rha_id" Nullable="false" />
+    <Property Type="Int32" Name="rha_habitacion" Nullable="false" />
+    <Property Type="DateTime" Name="rha_fecha_llegada" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="rha_cantidad_dias" Nullable="false" />
+    <Property Type="DateTime" Name="rha_fecha_partida" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="rha_estado" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="M20_GuardarReservaHabitacion_Result">
+    <Property Type="Int32" Name="Estatus" Nullable="true" />
+    <Property Type="String" Name="Mensaje" Nullable="true" />
+    <Property Type="Int32" Name="Referencia" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="M20_HotelHistorialReservaHabitacion_Result">
+    <Property Type="Int32" Name="hot_id" Nullable="false" />
+    <Property Type="String" Name="hot_nombre" Nullable="false" MaxLength="60" />
+    <Property Type="Int32" Name="usu_id" Nullable="false" />
+    <Property Type="String" Name="fullname" Nullable="false" MaxLength="102" />
+    <Property Type="Int32" Name="rha_id" Nullable="false" />
+    <Property Type="Int32" Name="rha_habitacion" Nullable="false" />
+    <Property Type="DateTime" Name="rha_fecha_llegada" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="rha_cantidad_dias" Nullable="false" />
+    <Property Type="DateTime" Name="rha_fecha_partida" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="rha_estado" Nullable="false" />
+  </ComplexType>
+  <ComplexType Name="M20_UsuarioHistorialReservaHabitacion_Result">
+    <Property Type="Int32" Name="hot_id" Nullable="false" />
+    <Property Type="String" Name="hot_nombre" Nullable="false" MaxLength="60" />
+    <Property Type="Int32" Name="usu_id" Nullable="false" />
+    <Property Type="String" Name="fullname" Nullable="false" MaxLength="102" />
+    <Property Type="Int32" Name="rha_id" Nullable="false" />
+    <Property Type="Int32" Name="rha_habitacion" Nullable="false" />
+    <Property Type="DateTime" Name="rha_fecha_llegada" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="rha_cantidad_dias" Nullable="false" />
+    <Property Type="DateTime" Name="rha_fecha_partida" Nullable="true" Precision="23" />
+    <Property Type="Int32" Name="rha_estado" Nullable="false" />
+  </ComplexType>
+</Schema>
