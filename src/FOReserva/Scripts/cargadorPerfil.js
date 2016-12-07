@@ -52,7 +52,7 @@ jQuery(document).ready(function () {
 
     mostrarContenedor(1)
 
-    /* NO QUITAR ESTA CARGA INICIAL QUE ES LA QUE HARÁ QUE POR DEFAULT SALGA VENTA DE VUELOS AL INICIAR LA PAGINA*/
+    /* NO QUITAR ESTA CARGA INICIAL QUE ES LA QUE HARÁ QUE POR DEFAULT SALGA EL PERFIL AL INICIAR LA PAGINA*/
     $("#contenedor").empty();
     var url = '/home/Perfil';
     var method = 'GET';
@@ -73,41 +73,93 @@ jQuery(document).ready(function () {
             }
         });
 
-    $("#contenedorImagenes").empty();
-    var url = '/gestion_vuelos/gestion_vuelosImagenes';
-    var method = 'GET';
-    var data = '';
-
-    $.ajax(
-        {
-            url: url,
-            type: method,
-            data: data,
-            success: function (data, textStatus, jqXHR) {
-
-                $("#contenedorImagenes").empty();
-                $("#contenedorImagenes").append(data);
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                alert(errorThrown);
-            }
-        });
     console.log("test");
 
 
 
-
-
-    /* CARGADOR DE LA PESTAÑA VUELOS*/
-    $("#LiVuelos").click(function (e) {
+    /* CARGADOR DE BOTON PERFIL*/
+    $("#PePerfil").click(function (e) {
         e.preventDefault();
-        $("#LiVuelos").addClass("active");
+        $("#PePerfil").addClass("active");
 
-        $("#LiAutos").removeClass("active");
-        $("#LiHoteles").removeClass("active");
-        $("#LiRestaurantes").removeClass("active");
-        $("#LiCruceros").removeClass("active");
-        var url = '/gestion_vuelos/gestion_vuelos';
+        $("#PeItinerario").removeClass("active");
+        $("#PeDiario").removeClass("active");
+        $("#PeVuelos").removeClass("active");
+        $("#PeCruceros").removeClass("active");
+        $("#PeAutos").removeClass("active");
+        $("#PeHabitaciones").removeClass("active");
+        $("#PeRestaurantes").removeClass("active");
+    });
+
+    /* CARGADOR DE BOTON ITINERARIO*/
+    $("#PeItinerario").click(function (e) {
+        e.preventDefault();
+        $("#PeItinerario").addClass("active");
+
+        $("#PePerfil").removeClass("active");
+        $("#PeDiario").removeClass("active");
+        $("#PeVuelos").removeClass("active");
+        $("#PeCruceros").removeClass("active");
+        $("#PeAutos").removeClass("active");
+        $("#PeHabitaciones").removeClass("active");
+        $("#PeRestaurantes").removeClass("active");
+    });
+
+    /* CARGADOR DE BOTON DIARIO*/
+    $("#PeDiario").click(function (e) {
+        e.preventDefault();
+        $("#PeDiario").addClass("active");
+
+        $("#PePerfil").removeClass("active");
+        $("#PeItineraio").removeClass("active");
+        $("#PeVuelos").removeClass("active");
+        $("#PeCruceros").removeClass("active");
+        $("#PeAutos").removeClass("active");
+        $("#PeHabitaciones").removeClass("active");
+        $("#PeRestaurantes").removeClass("active");
+    });
+
+    /* CARGADOR DE BOTON VUELOS*/
+    $("#PeVuelos").click(function (e) {
+        e.preventDefault();
+        $("#PeVuelos").addClass("active");
+
+        $("#PePerfil").removeClass("active");
+        $("#PeItinerario").removeClass("active");
+        $("#PeDiario").removeClass("active");
+        $("#PeCruceros").removeClass("active");
+        $("#PeAutos").removeClass("active");
+        $("#PeHabitaciones").removeClass("active");
+        $("#PeRestaurantes").removeClass("active");
+    });
+
+    /* CARGADOR DE BOTON CRUCEROS*/
+    $("#PeCruceros").click(function (e) {
+        e.preventDefault();
+        $("#PeCruceros").addClass("active");
+
+        $("#PePerfil").removeClass("active");
+        $("#PeItinerario").removeClass("active");
+        $("#PeDiario").removeClass("active");
+        $("#PeVuelos").removeClass("active");
+        $("#PeAutos").removeClass("active");
+        $("#PeHabitaciones").removeClass("active");
+        $("#PeRestaurantes").removeClass("active");
+    });
+
+    /* CARGADOR DE BOTON AUTOS*/
+    $("#PeAutos").click(function (e) {
+        e.preventDefault();
+        $("#PeAutos").addClass("active");
+
+        $("#PePerfil").removeClass("active");
+        $("#PeItinerario").removeClass("active");
+        $("#PeDiario").removeClass("active");
+        $("#PeVuelos").removeClass("active");
+        $("#PeCruceros").removeClass("active");
+        $("#PeHabitaciones").removeClass("active");
+        $("#PeRestaurantes").removeClass("active");
+        var url = '/gestion_reserva_auto/M19_Reserva_Autos_Perfil';
         var method = 'GET';
         var data = '';
 
@@ -125,155 +177,37 @@ jQuery(document).ready(function () {
                     alert(errorThrown);
                 }
             });
-
-        var url = '/gestion_vuelos/gestion_vuelosImagenes';
-        var method = 'GET';
-        var data = '';
-
-        $.ajax(
-            {
-                url: url,
-                type: method,
-                data: data,
-                success: function (data, textStatus, jqXHR) {
-
-                    $("#contenedorImagenes").empty();
-                    $("#contenedorImagenes").append(data);
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    alert(errorThrown);
-                }
-            });
-
-    });
-
-
-    /* CARGADOR DE LA PESTAÑA AUTOS*/
-    $("#LiAutos").click(function (e) {
-        e.preventDefault();
-
-        $("#LiAutos").addClass("active");
-
-        $("#LiVuelos").removeClass("active");
-        $("#LiHoteles").removeClass("active");
-        $("#LiRestaurantes").removeClass("active");
-        $("#LiCruceros").removeClass("active");
-        var url = '/gestion_reserva_auto/M19_Reserva_Autos';
-        var method = 'GET';
-        var data = '';
-
-        $.ajax(
-            {
-                url: url,
-                type: method,
-                data: data,
-                success: function (data, textStatus, jqXHR) {
-
-                    $("#contenedor").empty();
-                    $("#contenedor").append(data);
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    alert(errorThrown);
-                }
-            });
-
-        var url = '/gestion_reserva_auto/M19_Reserva_AutosImagenes';
-        var method = 'GET';
-        var data = '';
-
-        $.ajax(
-            {
-                url: url,
-                type: method,
-                data: data,
-                success: function (data, textStatus, jqXHR) {
-
-                    $("#contenedorImagenes").empty();
-                    $("#contenedorImagenes").append(data);
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    alert(errorThrown);
-                }
-            });
     });
 
 
 
-    /* CARGADOR DE LA PESTAÑA HOTELES*/
-    $("#LiHoteles").click(function (e) {
+    /* CARGADOR DE BOTON HABITACIONES*/
+    $("#PeHabitaciones").click(function (e) {
         e.preventDefault();
+        $("#PeHabitaciones").addClass("active");
 
-        $("#LiHoteles").addClass("active");
-
-        $("#LiVuelos").removeClass("active");
-        $("#LiAutos").removeClass("active");
-        $("#LiRestaurantes").removeClass("active");
-        $("#LiCruceros").removeClass("active");
+        $("#PePerfil").removeClass("active");
+        $("#PeItinerario").removeClass("active");
+        $("#PeDiario").removeClass("active");
+        $("#PeVuelos").removeClass("active");
+        $("#PeCruceros").removeClass("active");
+        $("#PeAutos").removeClass("active");
+        $("#PeRestaurantes").removeClass("active");
     });
 
 
 
-    /* CARGADOR DE LA PESTAÑA RESTAURANTES*/
-    $("#LiRestaurantes").click(function (e) {
+    /* CARGADOR DE BOTON RESTAURANTES*/
+    $("#PeRestaurantes").click(function (e) {
         e.preventDefault();
+        $("#PeRestaurantes").addClass("active");
 
-        $("#LiRestaurantes").addClass("active");
-
-        $("#LiVuelos").removeClass("active");
-        $("#LiHoteles").removeClass("active");
-        $("#LiAutos").removeClass("active");
-        $("#LiCruceros").removeClass("active");
-        var url = '/gestion_reserva_restaurante/gestion_reserva_restaurante';
-        var method = 'GET';
-        var data = '';
-
-        $.ajax(
-            {
-                url: url,
-                type: method,
-                data: data,
-                success: function (data, textStatus, jqXHR) {
-
-                    $("#contenedor").empty();
-                    $("#contenedor").append(data);
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    alert(errorThrown);
-                }
-            });
-
-        var url = '/gestion_vuelos/gestion_vuelosImagenes';
-        var method = 'GET';
-        var data = '';
-
-        $.ajax(
-            {
-                url: url,
-                type: method,
-                data: data,
-                success: function (data, textStatus, jqXHR) {
-
-                    $("#contenedorImagenes").empty();
-                    $("#contenedorImagenes").append(data);
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    alert(errorThrown);
-                }
-            });
-    });
-
-
-
-
-    /* CARGADOR DE LA PESTAÑA CRUCEROS*/
-    $("#LiCruceros").click(function (e) {
-        e.preventDefault();
-
-        $("#LiCruceros").addClass("active");
-
-        $("#LiVuelos").removeClass("active");
-        $("#LiHoteles").removeClass("active");
-        $("#LiRestaurantes").removeClass("active");
-        $("#LiAutos").removeClass("active");
+        $("#PePerfil").removeClass("active");
+        $("#PeItinerario").removeClass("active");
+        $("#PeDiario").removeClass("active");
+        $("#PeVuelos").removeClass("active");
+        $("#PeCruceros").removeClass("active");
+        $("#PeAutos").removeClass("active");
+        $("#PeHabitaciones").removeClass("active");
     });
 });

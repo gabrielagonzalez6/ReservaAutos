@@ -1651,6 +1651,7 @@
     <Content Include="Models\Hoteles\placeholder.html" />
     <Content Include="Models\Restaurantes\placeholder.html" />
     <Content Include="Models\Vuelos\placeholder.html" />
+    <Content Include="Scripts\cargadorPerfil.js" />
     <Content Include="Scripts\cargadorPestanas.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
