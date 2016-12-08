@@ -1,18 +1,17 @@
-﻿function mostrarContenedor(posicion) {
+﻿function mostrarContenedorPerfil(posicion) {
 
-    $(".contenedor").hide();
-    if (posicion > 0 && posicion <= $(".contenedor").length) {
-        $($(".contenedor")[posicion - 1]).show();
+    $(".contenedorPerfil").hide();
+    if (posicion > 0 && posicion <= $(".contenedorPerfil").length) {
+        $($(".contenedorPerfil")[posicion - 1]).show();
     } else {
-        $($(".contenedor")[0]).show();
+        $($(".contenedorPerfil")[0]).show();
     }
 }
 
 /* Cargador Generico */
-function cargarContenido(seccion, tipo, url, data, boton) {
+function cargarContenidoPerfil(seccion, tipo, url, data, boton) {
 
     // tipo CP : 1 columna, Todo el ancho de la pagina
-    // tipo MD : 2 columnas, contenido derecha
     // tipo MI : 2 columnas, contenido izquierda
     // tipo CL : 2 columnas, contenido izquierda 
     $.ajax(
@@ -22,15 +21,15 @@ function cargarContenido(seccion, tipo, url, data, boton) {
             data: data,
             success: function (data, textStatus, jqXHR) {
                 if (seccion == '#MD' || seccion == '#MI') {
-                    mostrarContenedor(1)
+                    mostrarContenedorPerfil(1)
                 } else if (seccion == '#CI') {
-                    mostrarContenedor(3)
+                    mostrarContenedorPerfil(3)
                 } else {
-                    mostrarContenedor(2)
+                    mostrarContenedorPerfil(2)
                 }
 
                 if (seccion == "#MD")
-                    seccion = "#contenedor"
+                    seccion = "#contenedorPerfil"
                 else if (seccion == "#MI")
                     seccion = "#contenedorImagenes"
 
@@ -50,11 +49,11 @@ function cargarContenido(seccion, tipo, url, data, boton) {
 
 jQuery(document).ready(function () {
 
-    mostrarContenedor(1)
+    mostrarContenedorPerfil(1)
 
     /* NO QUITAR ESTA CARGA INICIAL QUE ES LA QUE HARÁ QUE POR DEFAULT SALGA EL PERFIL AL INICIAR LA PAGINA*/
-    $("#contenedor").empty();
-    var url = '/home/Perfil';
+    $("#contenedorPerfil").empty();
+    var url = '/gestion_reserva_auto/M19_Reserva_Autos_Perfil';
     var method = 'GET';
     var data = '';
 
@@ -65,8 +64,8 @@ jQuery(document).ready(function () {
             data: data,
             success: function (data, textStatus, jqXHR) {
                 console.log('hola carlos')
-                $("#contenedor").empty();
-                $("#contenedor").append(data);
+                $("#contenedorPerfil").empty();
+                $("#contenedorPerfil").append(data);
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 alert(errorThrown);

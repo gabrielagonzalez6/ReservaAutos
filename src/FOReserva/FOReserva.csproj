@@ -3037,6 +3037,7 @@
     <Content Include="Views\gestion_reserva_auto\M19_Reserva_AutosImagenes.cshtml" />
     <Content Include="Views\Shared\_LayoutPerfil.cshtml" />
     <Content Include="Views\Home\Perfil.cshtml" />
+    <Content Include="Views\gestion_reserva_auto\M19_Reserva_Autos_Perfil.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

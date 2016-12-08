@@ -23,6 +23,11 @@ namespace FOReserva.Controllers
             return PartialView();
         }
 
+        public ActionResult M19_Reserva_Autos_Perfil()
+        {
+            return PartialView();
+        }
+
         [HttpPost]
         public JsonResult buscarCarro(Cvista_ReservaAutos model)
         {
