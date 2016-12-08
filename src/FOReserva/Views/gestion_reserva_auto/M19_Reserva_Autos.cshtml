@@ -49,7 +49,7 @@
 
     <div class="row text-center">
         <div class="col-md-12">
-            <button type="button" id="buscarCarro" class="btn btn-primary">Buscar</button>
+            <button type="button" id="buscarCarro" onclick="cargarContenidoPerfil('#MI', 'get', '/gestion_reserva_auto/M19_Reserva_Autos_Perfil', null, this)" class="btn btn-primary">Buscar</button>
         </div>
     </div>
 
@@ -58,11 +58,11 @@
         e.preventDefault();
         var form = $("#formBuscarCarro");
         $.ajax({
-            url: "gestion_reserva_auto/buscarCarro",
+            url: "gestion_reserva_auto/M19_Reserva_Autos_Perfil",
             data: form.serialize(),
             type: 'POST',
             success: function (data) {
-                alert("Buscando...");
+            //    alert("Buscando...");
             }
         });
     });

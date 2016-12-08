@@ -14,9 +14,8 @@ namespace FOReserva.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Perfil()
         {
-            ViewBag.Message = "Your app description page.";
 
             return View();
         }

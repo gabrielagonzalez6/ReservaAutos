@@ -210,3 +210,5 @@ jQuery(document).ready(function () {
         $("#PeHabitaciones").removeClass("active");
     });
 });
+;
+}
