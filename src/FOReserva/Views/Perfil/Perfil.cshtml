@@ -26,11 +26,31 @@
         </div>
 
         <!-- RIGHT -->
-             @Html.Partial("~/Views/gestion_reserva_auto/M19_Reserva_Autos_Perfil.cshtml", new FOReserva.Models.Autos.Cvista_ReservaAutos())
+        <div class="col-lg-9 col-md-9 col-sm-8">
+            <div id="contenedorPerfil">    
+                   
+            </div>   
+         </div>
+
 
     </div>
 </section>
 
 <!--CONTROLADOR DE LA VISTA PARCIAL-->
 <script type="text/javascript" src="@Url.Content("~/Scripts/cargadorPerfil.js")"></script>
-<!-- / -->
+
+<script type="text/javascript">
+    $("#PeAutos").click(function (e) {
+        e.preventDefault();
+
+        var url = '@Html.Partial("~/Views/gestion_reserva_auto/M19_Reserva_Autos_Perfil.cshtml", new FOReserva.Models.Autos.Cvista_ReservaAutos())';
+        var model = 'new FOReserva.Models.Autos.Cvista_ReservaAutos()';
+        var url2 = '~/Views/gestion_reserva_auto/M19_Reserva_Autos_Perfil.cshtml';
+        var method = 'GET';
+        var data = '';
+
+        $("#contenedorPerfil").empty();
+        $("#contenedorPerfil").append("Html.Partial");
+    });
+</script>
+
