@@ -115,7 +115,6 @@
                 type: method,
                 data: data,
                 success: function (data, textStatus, jqXHR) {
-                    console.log(data)
                     $("#contenedorPerfil").empty();
                     $("#contenedorPerfil").append(data);
                 },
