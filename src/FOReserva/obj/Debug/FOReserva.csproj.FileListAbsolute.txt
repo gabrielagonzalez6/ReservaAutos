@@ -220,3 +220,5 @@ C:\Users\GGMGABY\Documents\ReservaAutos\src\FOReserva\obj\Debug\FOReserva.csproj
 C:\Users\GGMGABY\Documents\ReservaAutos\src\FOReserva\obj\Debug\FOReserva.csprojResolveAssemblyReference.cache
 C:\Users\GGMGABY\Documents\ReservaAutos\src\FOReserva\obj\Debug\FOReserva.dll
 C:\Users\GGMGABY\Documents\ReservaAutos\src\FOReserva\obj\Debug\FOReserva.pdb
+C:\Users\GGMGABY\Documents\ReservaAutos\src\FOReserva\bin\WebGrease.dll
+C:\Users\GGMGABY\Documents\ReservaAutos\src\FOReserva\bin\es\System.Web.Optimization.resources.dll

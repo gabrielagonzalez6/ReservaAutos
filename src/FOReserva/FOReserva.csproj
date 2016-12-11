@@ -1677,7 +1677,6 @@
     <Content Include="Views\gestion_reclamos\placeholder.html" />
     <Content Include="Views\gestion_reserva_auto\placeholder.html" />
     <Content Include="Views\gestion_reserva_crucero\placeholder.html" />
-    <Content Include="Views\gestion_reserva_hotel\placeholder.html" />
     <Content Include="Views\gestion_reserva_restaurante\placeholder.html" />
     <Content Include="Views\gestion_revision\placeholder.html" />
     <Content Include="Views\Shared\assets\css\color_scheme\green.css" />
@@ -3036,8 +3035,9 @@
     <Content Include="Views\Shared\_MenuPerfil.cshtml" />
     <Content Include="Views\gestion_reserva_auto\M19_Reserva_Autos.cshtml" />
     <Content Include="Views\gestion_reserva_auto\M19_Reserva_AutosImagenes.cshtml" />
-    <Content Include="Views\Perfil\Perfil.cshtml" />
+    <Content Include="Views\Shared\Perfil.cshtml" />
     <Content Include="Views\gestion_reserva_auto\M19_Reserva_Autos_Perfil.cshtml" />
+    <Content Include="Views\gestion_reserva_auto\M19_Reserva_Autos_PerfilPrueba.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
